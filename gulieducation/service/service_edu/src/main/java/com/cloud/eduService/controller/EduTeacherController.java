@@ -50,8 +50,6 @@ public class EduTeacherController {
     @GetMapping("pageAll/{current}/{size}")
     public Msg pageListTeacher(@PathVariable("current") long current, @PathVariable("size") long size){
         Page<EduTeacher> page= new Page<>(current, size);
-        System.out.println(current);
-        System.out.println(size);
         eduTeacherService.page(page);
         List<EduTeacher> records = page.getRecords();
         Long total = page.getTotal();
